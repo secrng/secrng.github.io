@@ -21,6 +21,9 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == 'build':
         print("Freezing static files...")
         freezer.freeze()
+        # Create .nojekyll file to prevent GitHub from ignoring files
+        with open('build/.nojekyll', 'w') as f:
+            pass
         print("Done. Files generated in /build")
     else:
         print("Starting dev server...")
