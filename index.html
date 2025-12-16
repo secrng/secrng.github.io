@@ -1,44 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="antialiased">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyrus Chua | Security Engineer</title>
+    <title>Cyrus Chua - Security Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
+                        serif: ['Merriweather', 'serif'],
                     },
                     colors: {
-                        cyber: {
-                            dark: '#050510',
-                            light: '#1a1a2e',
-                            primary: '#00f7ff', // Cyan Neon
-                            secondary: '#7000ff', // Purple Neon
-                            text: '#e0e7ff'
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        }
+                        'off-white': '#fafafa',
+                        'ink': '#171717',
+                        'subtle': '#525252'
                     }
                 }
             }
@@ -46,259 +31,162 @@
     </script>
     <style>
         body {
-            background-color: #050510;
-            color: #e0e7ff;
+            background-color: #fafafa;
+            color: #171717;
         }
 
-        .glass {
-            background: rgba(26, 26, 46, 0.4);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .glass-hover:hover {
-            background: rgba(26, 26, 46, 0.6);
-            border-color: rgba(0, 247, 255, 0.3);
-            box-shadow: 0 0 15px rgba(0, 247, 255, 0.1);
-        }
-
-        .text-glow {
-            text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #050510;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #1a1a2e;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00f7ff;
+        /* Swiss Design Grid Lines */
+        .grid-line {
+            border-top: 1px solid #e5e5e5;
         }
     </style>
 </head>
 
-<body x-data="portfolio()" class="antialiased overflow-x-hidden relative">
+<body x-data="resume()"
+    class="min-h-screen py-12 px-6 sm:px-12 md:px-24 max-w-5xl mx-auto selection:bg-black selection:text-white">
 
-    <!-- Background Effects -->
-    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div
-            class="absolute top-0 left-1/4 w-96 h-96 bg-cyber-primary/20 rounded-full mix-blend-screen filter blur-[128px] animate-blob">
+    <!-- Header / Contact -->
+    <header class="mb-24 flex flex-col md:flex-row justify-between md:items-end gap-8">
+        <div>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4" x-text="profile.name"></h1>
+            <p class="text-xl text-subtle font-serif italic max-w-lg" x-text="profile.tagline"></p>
         </div>
-        <div
-            class="absolute top-0 right-1/4 w-96 h-96 bg-cyber-secondary/20 rounded-full mix-blend-screen filter blur-[128px] animate-blob animation-delay-2000">
-        </div>
-        <div
-            class="absolute -bottom-32 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-screen filter blur-[128px] animate-blob animation-delay-4000">
-        </div>
-        <!-- Grid overlay -->
-        <div
-            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBoNDBWMEgwdi4yaDQwdjM5LjZIMG0wLTYuOGg0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4=')] opacity-20">
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 border-b border-white/5"
-        :class="{'glass': scrolled, 'bg-transparent': !scrolled}" @scroll.window="scrolled = (window.pageYOffset > 20)">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2 group cursor-pointer">
-                <div class="relative">
-                    <div
-                        class="absolute -inset-1 bg-gradient-to-r from-cyber-primary to-cyber-secondary rounded-full blur opacity-25 group-hover:opacity-75 transition duration-200">
-                    </div>
-                    <i data-lucide="shield-check" class="relative w-8 h-8 text-cyber-primary"></i>
-                </div>
-                <span class="text-xl font-bold font-mono tracking-tighter">CYRUS<span
-                        class="text-cyber-primary">.SEC</span></span>
-            </div>
-            <div class="hidden md:flex gap-8">
-                <template x-for="link in navLinks">
-                    <a :href="link.href"
-                        class="text-sm font-medium text-gray-400 hover:text-cyber-primary transition-colors uppercase tracking-widest"
-                        x-text="link.name"></a>
-                </template>
-            </div>
-            <button class="md:hidden text-white" @click="mobileMenuOpen = !mobileMenuOpen">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center z-10 pt-20">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="order-2 md:order-1 space-y-8">
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-primary/30 bg-cyber-primary/10 text-cyber-primary text-xs font-mono mb-4">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber-primary opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-cyber-primary"></span>
-                    </span>
-                    OpSec Level: MAXIMUM
-                </div>
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-                    Securing the <br>
-                    <span
-                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-primary to-cyber-secondary text-glow">Digital
-                        Frontier</span>
-                </h1>
-                <p class="text-lg text-gray-400 max-w-lg leading-relaxed">
-                    Senior Information Security Professional specializing in penetration testing, vulnerability
-                    assessment, and strategic defense architecture.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#contact"
-                        class="px-8 py-3 rounded-lg bg-cyber-primary text-cyber-dark font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(0,247,255,0.3)]">
-                        Initiate Contact
-                    </a>
-                    <a href="#"
-                        class="px-8 py-3 rounded-lg glass text-white hover:text-cyber-primary transition-all border border-white/10 hover:border-cyber-primary/50">
-                        View Dossier
-                    </a>
-                </div>
-            </div>
-            <div class="order-1 md:order-2 flex justify-center relative">
-                <div class="relative w-80 h-80 md:w-96 md:h-96">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-cyber-primary to-cyber-secondary rounded-full blur-[80px] opacity-20 animate-pulse-slow">
-                    </div>
-                    <!-- Hexagon Abstract Art (Pure CSS) -->
-                    <div
-                        class="relative w-full h-full glass rounded-2xl flex items-center justify-center overflow-hidden border border-white/10 rotate-6 hover:rotate-0 transition duration-500">
-                        <div
-                            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay">
-                        </div>
-                        <div class="z-10 text-center space-y-2">
-                            <i data-lucide="lock" class="w-16 h-16 text-cyber-primary mx-auto"></i>
-                            <div class="font-mono text-xs text-cyber-primary">Encrypted :: AES-256</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="flex flex-col gap-2 text-sm font-medium">
+            <template x-if="profile.contact.email">
+                <a :href="'mailto:' + profile.contact.email" class="hover:underline flex items-center gap-2">
+                    <span x-text="profile.contact.email"></span>
+                    <span class="text-xs text-gray-400">↗</span>
+                </a>
+            </template>
+            <template x-if="profile.contact.linkedin">
+                <a :href="profile.contact.linkedin" target="_blank" class="hover:underline flex items-center gap-2">
+                    LinkedIn Profile
+                    <span class="text-xs text-gray-400">↗</span>
+                </a>
+            </template>
+            <a href="Cyrus C. _ LinkedIn.pdf" target="_blank"
+                class="hover:underline flex items-center gap-2 text-subtle mt-2">
+                [View Original PDF]
+            </a>
         </div>
     </header>
 
-    <!-- Experience Container -->
-    <section id="experience" class="py-24 z-10 relative">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
-                <span class="text-cyber-primary font-mono">01.</span> Operation History
-                <span class="h-px bg-white/10 flex-grow ml-4"></span>
-            </h2>
+    <!-- Grid Layout for Content -->
+    <main class="grid grid-cols-1 md:grid-cols-12 gap-12">
 
-            <div class="space-y-8">
-                <template x-for="job in profile.experience">
-                    <div
-                        class="glass p-8 rounded-2xl border border-white/5 hover:border-cyber-primary/30 transition-all duration-300 group">
-                        <div class="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-4">
-                            <div>
-                                <h3 class="text-xl font-bold text-white group-hover:text-cyber-primary transition-colors"
-                                    x-text="job.title"></h3>
-                                <div class="text-cyber-secondary font-mono text-sm mt-1" x-text="job.company"></div>
-                            </div>
+        <!-- Sidebar: Philosophy & Skills -->
+        <aside class="md:col-span-4 space-y-16">
+
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">About</h2>
+                <div class="prose prose-sm font-serif leading-relaxed text-subtle">
+                    <p
+                        x-text="profile.about || 'Security engineering professional with a focus on sustainable and scalable defense mechanisms.'">
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Skills & Competencies</h2>
+                <ul class="space-y-2 text-sm">
+                    <template x-for="skill in profile.skills">
+                        <li class="flex items-start gap-2">
+                            <span class="text-gray-300">/</span>
+                            <span x-text="skill"></span>
+                        </li>
+                    </template>
+                </ul>
+            </section>
+
+        </aside>
+
+        <!-- Main Content: Experience -->
+        <div class="md:col-span-8 space-y-16">
+
+            <!-- Philosophy / Approach -->
+            <section class="border-b border-gray-200 pb-12">
+                <h2 class="text-2xl font-serif italic mb-6">Mindset & Approach</h2>
+                <div class="space-y-4 text-subtle leading-loose">
+                    <p>Security is not just about tools or patches; it is about architecture and culture.</p>
+                    <p>My approach centers on <strong>resilience by design</strong>—building systems that can withstand
+                        inevitable failures without catastrophic loss. I believe in pragmatic security that enables
+                        business velocity rather than hindering it.</p>
+                </div>
+            </section>
+
+            <!-- Experience List -->
+            <section>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-10">Professional Experience</h2>
+
+                <div class="space-y-12">
+                    <template x-for="job in profile.experience">
+                        <article
+                            class="group relative pl-8 border-l border-gray-100 hover:border-gray-300 transition-colors">
+                            <!-- Dot on timeline -->
                             <span
-                                class="px-4 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-400 border border-white/5"
-                                x-text="job.period"></span>
-                        </div>
-                        <p class="text-gray-400 leading-relaxed text-sm" x-text="job.description"></p>
-                    </div>
-                </template>
-            </div>
+                                class="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-gray-100 group-hover:bg-black transition-colors ring-4 ring-white"></span>
+
+                            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-2">
+                                <h3 class="font-bold text-lg" x-text="job.title"></h3>
+                                <span class="text-xs font-mono text-gray-400 shrink-0" x-text="job.period"></span>
+                            </div>
+                            <div class="text-sm font-medium text-gray-500 mb-4" x-text="job.company"></div>
+                            <div class="text-sm leading-relaxed text-subtle max-w-2xl font-serif"
+                                x-text="job.description"></div>
+                        </article>
+                    </template>
+                </div>
+            </section>
+
         </div>
-    </section>
 
-    <!-- Skills Container -->
-    <section id="skills" class="py-24 z-10 relative bg-black/20">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
-                <span class="text-cyber-primary font-mono">02.</span> Technical Arsenal
-                <span class="h-px bg-white/10 flex-grow ml-4"></span>
-            </h2>
+    </main>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <template x-for="skill in profile.skills">
-                    <div
-                        class="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-cyber-primary/10 hover:border-cyber-primary/40 transition-all cursor-crosshair group flex flex-col items-center gap-3 text-center">
-                        <i data-lucide="cpu"
-                            class="w-6 h-6 text-gray-500 group-hover:text-cyber-primary transition-colors"></i>
-                        <span class="text-sm font-mono text-gray-300 group-hover:text-white" x-text="skill"></span>
-                    </div>
-                </template>
-            </div>
+    <footer
+        class="mt-32 pt-12 border-t border-gray-100 flex justify-between items-center text-xs text-gray-400 font-mono">
+        <div>
+            &copy; 2024 Cyrus Chua
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 relative z-10 glass">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <div class="flex justify-center gap-6 mb-8">
-                <a :href="profile.contact.linkedin"
-                    class="p-3 rounded-full bg-white/5 hover:bg-cyber-primary hover:text-cyber-dark transition-all">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-                <a :href="'mailto:' + profile.contact.email"
-                    class="p-3 rounded-full bg-white/5 hover:bg-cyber-primary hover:text-cyber-dark transition-all">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                </a>
-            </div>
-            <p class="text-gray-500 text-sm font-mono">
-                System Status: <span class="text-cyber-primary">ONLINE</span> <br>
-                &copy; 2024 Cyrus Chua. All rights reserved.
-            </p>
+        <div>
+            Status: OPEN_TO_OPPORTUNITIES
         </div>
     </footer>
 
     <script>
-        function portfolio() {
+        function resume() {
             return {
-                scrolled: false,
-                mobileMenuOpen: false,
-                navLinks: [
-                    { name: 'Home', href: '#' },
-                    { name: 'Experience', href: '#experience' },
-                    { name: 'Skills', href: '#skills' },
-                    { name: 'Contact', href: '#contact' },
-                ],
-                // Default data, will be overwritten by fetch
                 profile: {
                     name: "Cyrus Chua",
-                    contact: { email: "contact@example.com", linkedin: "#" },
-                    experience: [
-                        { title: "Retrieving Data...", company: "System", period: "Loading...", description: "Decrypting profile data from secure storage..." }
-                    ],
-                    skills: ["Loading...", "Loading...", "Loading..."]
+                    tagline: "Information Security",
+                    contact: {},
+                    skills: [],
+                    experience: [],
+                    about: ""
                 },
                 async init() {
-                    lucide.createIcons();
                     try {
                         const response = await fetch('parsed_profile.json');
                         if (response.ok) {
                             const data = await response.json();
-                            // Merge/sanitize data
-                            this.profile = {
-                                ...this.profile,
-                                ...data,
-                                experience: data.experience && data.experience.length ? data.experience.map(e => {
-                                    // Make strings into objects if they are strings (parsing artifact)
-                                    if (typeof e === 'string') return { title: "Experience Entry", company: "", period: "", description: e };
-                                    return e;
-                                }) : this.profile.experience
-                            };
-                            // Re-init icons after data load
-                            this.$nextTick(() => lucide.createIcons());
+                            this.profile.name = data.name || "Cyrus Chua";
+                            this.profile.tagline = data.tagline || "Information Security Professional";
+                            this.profile.contact = data.contact || {};
+                            this.profile.skills = data.skills || [];
+                            this.profile.about = data.about || "";
+
+                            // Filter valid experience entries
+                            this.profile.experience = (data.experience || [])
+                                .filter(e => e.title && e.company)
+                                .map(e => ({
+                                    ...e,
+                                    // Clean up period if it contains garbage
+                                    period: e.period.length < 50 ? e.period : "Recent",
+                                    // Truncate overly long scraped descriptions
+                                    description: e.description.length > 500 ? e.description.substring(0, 500) + "..." : e.description
+                                }));
                         }
                     } catch (e) {
-                        console.error("Failed to load profile data", e);
+                        console.error("Error loading profile", e);
                     }
                 }
             }

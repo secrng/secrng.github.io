@@ -1,0 +1,185 @@
+500+ connections
+Addprofilesection Enhance profile
+He/Him
+Security Engineering @ Gusto
+San Francisco Bay Area·Contact info
+Cyrus C.
+Gusto
+Opento Resources
+Open to volunteer for these causesDiversity, Equity, and Inclusion, Environmental Sustainability, Science an…Show details
+Suggested for you
+Private to you
+Add Github projects that showcase your skills
+Show recruiters how you put your skills to use by adding projects to your profile.
+Add project
+AnalyticsPrivate to you
+112 profile viewsDiscover who's viewed your profile.
+0 post impressionsStart a post to increase engagement.Past 7 days
+35 search appearancesSee how often you appear in search results.
+Show all analytics
+About
+- Seasoned infosec professional with 9+ years of work experience ininfosec/cybersec, with specialized experience/skills in the following security
+Home My Network Jobs MessagingNotifications Me
+ For Business Lear
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 1/8
+domains: detection engineering, incident response, digital forensics, threathunting, vulnerability management, corporate security, security risk analysis,security operations, security automation, security analytics, AI security, andsecurity engineering.
+- I have experience both working in a large organization (>10k employees),implementing with security at scale, as well as smaller/startup environment (2k+employees) where the team is more lean/broad-scoped, allowing me to wearmany hats.
+- I am currently working full-time as a Senior Security Engineer in the DefenseEngineering and Threat Hunting (DETH) team at Gusto, primarily leading/buildingdetection engineering and vuln management functions, but also building threathunting and sec ops with a focus on scaling and automating.
+- Previously a member of Paranoids TSR/FIRE team at Yahoo/Verizon Media/Oath,focusing on incident response and automations.
+- M.S. Security Informatics from Johns Hopkins University and GIAC CertifiedIncident Handler.
+- I am passionate about always learning and applying my knowledge and skills ininformation security, specifically in the areas of security engineering, threatdetection, vulnerability management, and security analytics. I also have a fairamount of knowledge in applied cryptography, web security, and softwaresecurity.
+- I feel strongly that security should be something that engineering/productteams have ownership of, and the security team's job should be topartner/assist/collaborate with/empower their efforts in writing secure code andbuilding things safely. Partnerships between IT/eng teams and security are superimportant.
+P.S. I'm not interested in: contract roles, roles in toxic companies (badly handledlayoffs/RTOs, removing DEI policies, etc.), or roles that require relocating to adifferent country/state. I also don't accept random LinkedIn connection requestsunless I've met and interacted with you either in-person or through a video call.Thank you.
+Top skillsSecurity Incident Response • Cyber Threat Hunting (CTH) • Threat& Vulnerability Management • Detection Engineering • SecurityEngineering
+Services
+Show all services
+Cybersecurity
+Featured
+Post
+happy to be a part of th
+4
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 2/8
+Activity944 followers
+Create a post
+You havenʼt posted yetPosts you share will be displayed here.
+Show all activity
+Experience
+Senior Security EngineerGusto · Full-timeNov 2021 - Present · 4 yrs 2 mosSan Francisco, California, United States · Hybrid
+Security Engineering, Detection Engineering and +7 skills
+What I do:- Security Engineering- Detection Engineering / Detection-as-code- Incident Response- Vulnerability Management- Corporate Security- Threat Hunting- Cloud Security
+Technical Security Engineer - Forensics, Incident Response,EngineeringVerizon Media / Yahoo · Full-timeAug 2017 - Nov 2021 · 4 yrs 4 mosSunnyvale, California
+Security Engineering, Security Incident Response and +1 skill
+Member of Forensics, Incident Response, Engineering (FIRE) Team of theVerizon Media / Yahoo (formerly known as Oath) Paranoids> My job scope includes Incident Response, Forensics, and other blue-team related activities.> Transitioned into FIRE team at Verizon Media due to Verizon'sacquisition of Yahoo! Inc., and back to Yahoo after the divestiture.> Network/systems monitoring, forensic collection/analysis of digitalevidence> Hunt and investigate possible threats and indicators of compromise,automate anomaly detection and threat hunting> Participate in 24/7 on-call rotation to respond to high-severity securityincidents> Work on projects to improve processes, betterreporting/documentation, automate DFIR things
+Paranoids Security Engineer - Track, Search, and RescueYahoo! Inc. · Full-timeMar 2017 - Aug 2017 · 6 mosSunnyvale, California
+Member of Track, Search, and Rescue Team (Incident Response/BlueTeam) of the Yahoo! Paranoids> Track: network/systems monitoring, forensic collection/analysis ofdigital evidence> Search: hunt and investigate possible threats and indicators ofcompromise, automate anomaly detection and threat hunting> Rescue: work with business units to drive remediation of securitybugs, run high-severity security incidents> Participate in 24/7 on-call rotation to respond to high-severity securityincidents> Identify and analyze risks associated with known vulnerabitilies andwork with product owners to apply fixes.
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 3/8
+Show all 8 experiences
+Security Engineering, Threat & Vulnerability Management and +1skillCourse AssistantJohns Hopkins University Dept. of Computer Science · Part-timeSep 2016 - Dec 2016 · 4 mosBaltimore, Maryland
+Assist Dr. Avi Rubin in the course: Security and Privacy in Computing(EN.600.443).
+Data Science InternGovTech Singapore (formerly IDA Singapore) · InternshipApr 2015 - Jul 2015 · 4 mosSingapore
+Taxi Trajectory Data Mining and Visualization (Python, XML, OSM,Google API)• Contributed significantly to the early stages of "Taxi Trajectory DataMining and Visualization" System used to optimize taxi supply-demandof taxis.• Worked on algorithms for generating graphs of road networks with>90% accuracy (fixing inaccuracies in OSM with Google Maps data) andmaking it possible to query multiple path traversals speedily by pre-generating and caching a reduced graph and its paths.• Designed algorithms to snap GPS coordinates to likely road vertices.
+Education
+Show all 3 educations
+The Johns Hopkins UniversityM. S. Security Informatics, Computer and Information Systems Security2015 - 2016
+Activities and societies: JHUSSA member, JHUISI student mentor, SO-JHUISI Treasurer
+Research and Technology Track
+National University of SingaporeB. Comp. Information Systems, Information Security Specialization2010 - 2014
+Activities and societies: NUS Students' Computing Club
+Licenses & certifications
+Show all 4 licenses & certifications
+Coaching and Developing EmployeesLinkedInIssued May 2023
+Show credential
+People Development and Employee Coaching
+Apple® Forensic InvestigationsBlackBag TechnologiesIssued Dec 2020
+Projects
+The Security Conscious Bot (Hophacks Fall 2016)Oct 2016 - Present
+Associated with The Johns Hopkins University
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 4/8
+Show all 10 projects
+Show project
+A simple Telegram bot I built at Hophacks hackathon to make rsecurity moreeasily accessible to people. The aim is to keep updating it in the long term with……see more
+Attacks on Encrypted Messaging (Practical Cryptographic Systems)Oct 2016 - Dec 2016
+Associated with The Johns Hopkins University
+Show project
+- Analyzed an encrypted messaging application and discovered vulnerabilities inthe… …see more
+Volunteering
+Volunteer InstructorSingapore Red CrossJan 2006 - Mar 2006 · 3 mos
+Skills
+Show all 42 skills
+Prompt Engineering
+Senior Security Engineer at Gusto
+Generative AI for Cybersecurity
+Senior Security Engineer at Gusto
+Recommendations
+Show all pending
+Given
+Ricky .· 1stInformation Security Problem Finder & Solver. Security Leadership.Always be learning. BSidesSF Organizer. Mentor. Open to SecurityLeadership or Consulting roles.February 8, 2023,Cyrusreported directly toRicky
+Ricky is without a doubt one of the best managers I've ever worked with,and I will always appreciate my time working with him, both as his directreport at one point, and later as a fellow coworker. Even after hetransitioned to a different function within Security at Gusto, he continuesto be the very approachable person that he is, raising issues and helpingout with all sorts of things outside of his scope. He is very thoughtful,knowledgeable, helpful, and is someone I would always look up to for anykind of advice or guidance. Any organization that he works at would be…
+Courses
+Computer ForensicsEN.600.457
+Associated with The Johns Hopkins University
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 5/8
+Show all 30 courses
+Computer Networks (Audit)EN.600.444
+Associated with The Johns Hopkins University
+Languages
+EnglishNative or bilingual proficiency
+MandarinNative or bilingual proficiency
+Organizations
+Show all 5 organizations
+GIAC Advisory BoardMember · Mar 2018 - Present
+Johns Hopkins University Information Security InstituteMSSI Student Mentor · Sep 2016 - Dec 2016
+Associated with The Johns Hopkins University
+Interests
+Top Voices Companies Groups Newsletters Schools
+Zach Wilson· 2ndFounder @ DataExpert.io | The most ADHD man in the world | AngelInvestor | More followers than your grandma504,031 followers
+Following
+Rachel Tobac· 2ndCEO, SocialProof Security, Friendly Hacker, Security Awareness Videosand Live Training40,792 followers
+Following
+Causes
+Disaster and Humanitarian Relief • Economic Empowerment • Education •Environment • Health • Poverty Alleviation • Science and Technology
+Profile language
+English
+Public profile & URL
+www.linkedin.com/in/cyruschua
+Who your viewers also viewedPrivate to you
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 6/8
+Information Security Specialist at Gusto
+View
+Information Security Specialist at Gusto
+View
+Software Developer at Gusto
+View
+Information Security Specialist at Gusto
+View
+People you may knowFrom your job title
+Show all
+Bradley H.
+Connect
+sr. security engineer at amazon
+Mario Casaclang
+Connect
+Security Engineer at RUCKUS Networks
+Fanya Engler
+Connect
+Principal Infrastructure Security Engineer at Yahoo
+K B
+Connect
+Information security assurance at TechAnax
+Ian R.
+Connect
+Ingeniero de software
+You might likePages for you
+Rafflesian-Business-Network
+5,527 followers
+35 connections follow this page
+Follow
+Non-profit Organizations
+Zapier
+329,832 followers
+7 connections follow this page
+Software Development
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 7/8
+About Accessibility Talent Solutions
+Professional CommunityPolicies Careers Marketing Solutions
+Ad Choices Advertising
+Sales Solutions Mobile Small Business
+Safety Center
+Questions?Visit our Help Center.
+Manage your account and privacyGo to your Settings.
+Recommendation transparencyLearn more about Recommended Content.
+Select Language
+LinkedIn Corporation © 2025
+Show all
+Follow
+Privacy & Terms
+English (English)
+12/16/25, 6:09 PM Cyrus C. | LinkedIn
+https://www.linkedin.com/in/cyruschua/ 8/8
