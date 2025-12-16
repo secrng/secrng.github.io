@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyrus Chua | Security Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            dark: '#050510',
+                            light: '#1a1a2e',
+                            primary: '#00f7ff', // Cyan Neon
+                            secondary: '#7000ff', // Purple Neon
+                            text: '#e0e7ff'
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050510;
+            color: #e0e7ff;
+        }
+
+        .glass {
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-hover:hover {
+            background: rgba(26, 26, 46, 0.6);
+            border-color: rgba(0, 247, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 247, 255, 0.1);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050510;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1a1a2e;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f7ff;
+        }
+    </style>
+</head>
+
+<body x-data="portfolio()" class="antialiased overflow-x-hidden relative">
+
+    <!-- Background Effects -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div
+            class="absolute top-0 left-1/4 w-96 h-96 bg-cyber-primary/20 rounded-full mix-blend-screen filter blur-[128px] animate-blob">
+        </div>
+        <div
+            class="absolute top-0 right-1/4 w-96 h-96 bg-cyber-secondary/20 rounded-full mix-blend-screen filter blur-[128px] animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-32 left-1/3 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-screen filter blur-[128px] animate-blob animation-delay-4000">
+        </div>
+        <!-- Grid overlay -->
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBoNDBWMEgwdi4yaDQwdjM5LjZIMG0wLTYuOGg0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjIiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4=')] opacity-20">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 border-b border-white/5"
+        :class="{'glass': scrolled, 'bg-transparent': !scrolled}" @scroll.window="scrolled = (window.pageYOffset > 20)">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <div class="relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-cyber-primary to-cyber-secondary rounded-full blur opacity-25 group-hover:opacity-75 transition duration-200">
+                    </div>
+                    <i data-lucide="shield-check" class="relative w-8 h-8 text-cyber-primary"></i>
+                </div>
+                <span class="text-xl font-bold font-mono tracking-tighter">CYRUS<span
+                        class="text-cyber-primary">.SEC</span></span>
+            </div>
+            <div class="hidden md:flex gap-8">
+                <template x-for="link in navLinks">
+                    <a :href="link.href"
+                        class="text-sm font-medium text-gray-400 hover:text-cyber-primary transition-colors uppercase tracking-widest"
+                        x-text="link.name"></a>
+                </template>
+            </div>
+            <button class="md:hidden text-white" @click="mobileMenuOpen = !mobileMenuOpen">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center z-10 pt-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 space-y-8">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyber-primary/30 bg-cyber-primary/10 text-cyber-primary text-xs font-mono mb-4">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyber-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-cyber-primary"></span>
+                    </span>
+                    OpSec Level: MAXIMUM
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-tight">
+                    Securing the <br>
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-primary to-cyber-secondary text-glow">Digital
+                        Frontier</span>
+                </h1>
+                <p class="text-lg text-gray-400 max-w-lg leading-relaxed">
+                    Senior Information Security Professional specializing in penetration testing, vulnerability
+                    assessment, and strategic defense architecture.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#contact"
+                        class="px-8 py-3 rounded-lg bg-cyber-primary text-cyber-dark font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(0,247,255,0.3)]">
+                        Initiate Contact
+                    </a>
+                    <a href="#"
+                        class="px-8 py-3 rounded-lg glass text-white hover:text-cyber-primary transition-all border border-white/10 hover:border-cyber-primary/50">
+                        View Dossier
+                    </a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center relative">
+                <div class="relative w-80 h-80 md:w-96 md:h-96">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-cyber-primary to-cyber-secondary rounded-full blur-[80px] opacity-20 animate-pulse-slow">
+                    </div>
+                    <!-- Hexagon Abstract Art (Pure CSS) -->
+                    <div
+                        class="relative w-full h-full glass rounded-2xl flex items-center justify-center overflow-hidden border border-white/10 rotate-6 hover:rotate-0 transition duration-500">
+                        <div
+                            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay">
+                        </div>
+                        <div class="z-10 text-center space-y-2">
+                            <i data-lucide="lock" class="w-16 h-16 text-cyber-primary mx-auto"></i>
+                            <div class="font-mono text-xs text-cyber-primary">Encrypted :: AES-256</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Experience Container -->
+    <section id="experience" class="py-24 z-10 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
+                <span class="text-cyber-primary font-mono">01.</span> Operation History
+                <span class="h-px bg-white/10 flex-grow ml-4"></span>
+            </h2>
+
+            <div class="space-y-8">
+                <template x-for="job in profile.experience">
+                    <div
+                        class="glass p-8 rounded-2xl border border-white/5 hover:border-cyber-primary/30 transition-all duration-300 group">
+                        <div class="flex flex-col md:flex-row justify-between md:items-start gap-4 mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-white group-hover:text-cyber-primary transition-colors"
+                                    x-text="job.title"></h3>
+                                <div class="text-cyber-secondary font-mono text-sm mt-1" x-text="job.company"></div>
+                            </div>
+                            <span
+                                class="px-4 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-400 border border-white/5"
+                                x-text="job.period"></span>
+                        </div>
+                        <p class="text-gray-400 leading-relaxed text-sm" x-text="job.description"></p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Container -->
+    <section id="skills" class="py-24 z-10 relative bg-black/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
+                <span class="text-cyber-primary font-mono">02.</span> Technical Arsenal
+                <span class="h-px bg-white/10 flex-grow ml-4"></span>
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <template x-for="skill in profile.skills">
+                    <div
+                        class="p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-cyber-primary/10 hover:border-cyber-primary/40 transition-all cursor-crosshair group flex flex-col items-center gap-3 text-center">
+                        <i data-lucide="cpu"
+                            class="w-6 h-6 text-gray-500 group-hover:text-cyber-primary transition-colors"></i>
+                        <span class="text-sm font-mono text-gray-300 group-hover:text-white" x-text="skill"></span>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 relative z-10 glass">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center gap-6 mb-8">
+                <a :href="profile.contact.linkedin"
+                    class="p-3 rounded-full bg-white/5 hover:bg-cyber-primary hover:text-cyber-dark transition-all">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a :href="'mailto:' + profile.contact.email"
+                    class="p-3 rounded-full bg-white/5 hover:bg-cyber-primary hover:text-cyber-dark transition-all">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm font-mono">
+                System Status: <span class="text-cyber-primary">ONLINE</span> <br>
+                &copy; 2024 Cyrus Chua. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function portfolio() {
+            return {
+                scrolled: false,
+                mobileMenuOpen: false,
+                navLinks: [
+                    { name: 'Home', href: '#' },
+                    { name: 'Experience', href: '#experience' },
+                    { name: 'Skills', href: '#skills' },
+                    { name: 'Contact', href: '#contact' },
+                ],
+                // Default data, will be overwritten by fetch
+                profile: {
+                    name: "Cyrus Chua",
+                    contact: { email: "contact@example.com", linkedin: "#" },
+                    experience: [
+                        { title: "Retrieving Data...", company: "System", period: "Loading...", description: "Decrypting profile data from secure storage..." }
+                    ],
+                    skills: ["Loading...", "Loading...", "Loading..."]
+                },
+                async init() {
+                    lucide.createIcons();
+                    try {
+                        const response = await fetch('parsed_profile.json');
+                        if (response.ok) {
+                            const data = await response.json();
+                            // Merge/sanitize data
+                            this.profile = {
+                                ...this.profile,
+                                ...data,
+                                experience: data.experience && data.experience.length ? data.experience.map(e => {
+                                    // Make strings into objects if they are strings (parsing artifact)
+                                    if (typeof e === 'string') return { title: "Experience Entry", company: "", period: "", description: e };
+                                    return e;
+                                }) : this.profile.experience
+                            };
+                            // Re-init icons after data load
+                            this.$nextTick(() => lucide.createIcons());
+                        }
+                    } catch (e) {
+                        console.error("Failed to load profile data", e);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
